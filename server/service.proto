@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "./pkg/grpcService";
+import "google/protobuf/empty.proto";
+
+service Greeter {
+  // Sends a greeting
+  rpc ConnectToTheHobby(ClientInfoRequest) returns(stream Notification) {}
+  rpc ShowAllPlayersInTheHobby(google.protobuf.Empty) returns(ClientsResponse) {}
+}
+
+message ClientInfoRequest {
+  string name = 1;
+}
+
+message ClientsResponse {
+  repeated ClientInfoRequest Client = 1;
+}
+
+message Notification {
+  string action = 1;
+  string namePlayer = 2;
+}

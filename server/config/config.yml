@@ -1,0 +1,6 @@
+Server:
+  IP: "127.0.0.1:8095"
+  LenPlayersForStart: 4
+  MinMafia: 1
+  MinPolice: 1
+  MinPeople: 2
